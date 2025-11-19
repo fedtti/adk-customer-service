@@ -2,18 +2,14 @@ from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 from google.genai import types
 
-from .sub_agents.nba import nba
-
-operator = Agent(
+audit = Agent(
     model = LiteLlm(
         model = "ollama_chat/gemma3:latest",
         api_base = "http://localhost:11434",
     ),
-    name = "operator",
+    name = "nba",
     description = "",
     instruction = """
-        You are an experienced customer service operator that replies gently to the customer.
+        You are an experienced customer service operator that audits other operators.
     """,
-    sub_agents = [ nba ],
-    tools = []
 )

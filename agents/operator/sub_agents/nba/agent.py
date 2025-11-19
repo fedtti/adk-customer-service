@@ -10,5 +10,6 @@ nba = Agent(
     name = "nba",
     description = "",
     instruction = """
+        You are an experienced customer service operator that offers the next best action to the customer.
     """,
 )
