@@ -3,7 +3,6 @@ from google.adk.models.lite_llm import LiteLlm
 
 """ """
 def kpi(query: str) -> None:
-
     exit(0)
 
 """ """
@@ -13,11 +12,10 @@ agent = Agent(
         api_base = "http://localhost:11434",
     ),
     name = "audit",
-    description = "",
+    description = "Audits other agents’ answers.",
     instruction = """
         You are an experienced customer service agent.
         Your role is to **audit other agents’ answers**.
-
     """,
     tools = [ kpi ]
 )

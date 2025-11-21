@@ -1,6 +1,9 @@
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 
+def offer() -> None:
+    exit(0)
+
 """ """
 agent = Agent(
     model = LiteLlm(
@@ -8,11 +11,10 @@ agent = Agent(
         api_base = "http://localhost:11434",
     ),
     name = "nba",
-    description = "",
+    description = "Offers the Next Best Action (NBA) to the customer.",
     instruction = """
         You are an experienced customer service agent.
-        Your role is to **offer the _Next Best Action (NBA)_ to the customers**.
-
+        Your role is to **offer the _Next Best Action (NBA)_ to the customer**.
     """,
-    tools = []
+    tools = [ offer ]
 )

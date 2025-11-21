@@ -11,17 +11,16 @@ agent = Agent(
         api_base = "http://localhost:11434",
     ),
     name = "agent",
-    description = "",
+    description = "Answers customers’ questions.",
     instruction = """
         You are an experienced customer service agent.
-        Your role is to **answer customers’ questions gently**.
-
+        Your role is to **answer customers’ questions**.
     """,
     sub_agents = [
       audit,
       nba
     ],
-    tools = []
+    tools = [],
 )
 
 root_agent = agent
