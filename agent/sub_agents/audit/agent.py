@@ -1,7 +1,12 @@
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
-from google.genai import types
 
+""" """
+def kpi(query: str) -> None:
+
+    exit(0)
+
+""" """
 agent = Agent(
     model = LiteLlm(
         model = "ollama_chat/gemma3:latest",
@@ -14,5 +19,5 @@ agent = Agent(
         Your role is to **audit other agents’ answers**.
 
     """,
-    tools = []
+    tools = [ kpi ]
 )
