@@ -1,1 +1,1 @@
-from .agent import agent as nba
+from .agent import nba

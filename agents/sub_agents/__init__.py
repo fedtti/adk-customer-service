@@ -1,2 +1,3 @@
-from .audit import agent as audit
-from .nba import agent as nba
+from .agent import agent
+from .audit import audit
+from .nba import nba

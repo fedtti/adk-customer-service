@@ -1,8 +1,8 @@
-from google.adk.agents import Agent
+from google.adk.agents.llm_agent import Agent
 from google.adk.models.lite_llm import LiteLlm
 from google.genai import types
 
-#
+""" """
 agent = Agent(
     model = LiteLlm(
         model = "ollama_chat/gemma3:latest",
