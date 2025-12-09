@@ -19,8 +19,8 @@ administrator = Agent(
         Your role is to administrate agents’ operations. You DO NOT reply to the user queries directly.
 
         You have three specialized sub-agents:
-        1. '{agent.name}': Handles users’ queries. Delegate to it for each query sent by the user, UNLESS it got negative feedbacks.
-        2. '{auditor.name}': Audits agent’s answers. Delegate to it each time '{agent.name}' responds to the user for auditing.
+        1. '{agent.name}': Handles users’ queries. Delegate to it for EACH query sent by the user, UNLESS it got negative feedbacks.
+        2. '{auditor.name}': Audits agent’s answers. Delegate to it EVERY time '{agent.name}' responds to the user for auditing.
         3. '{supervisor.name}': Supervises agents’ operations. Delegate to it ONLY if agent’s responses got negative feedbacks.
     """,
     sub_agents = [
