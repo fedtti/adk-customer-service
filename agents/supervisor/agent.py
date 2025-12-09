@@ -8,6 +8,8 @@ print("✅ Libraries imported.")
 from .sub_agents.agent import agent as agent
 from .sub_agents.audit import agent as audit
 
+print("✅ Agents imported.")
+
 """ """
 supervisor = Agent(
     model = "gemini-3-pro-preview",
@@ -17,11 +19,14 @@ supervisor = Agent(
         You are an experienced customer service supervisor.
         Your role is to supervise agents’ activities.
 
-        You greet the user after their first message, then:
-        1.
-        2.
+        You have two specialized sub-agents:
+        1. '{agent.agent.name}': Handles users’ questions. Delegate to it if the user asks a question.
+        2. '{audit.audit.name}': Handles agent’s answers. Delegate to it after '{agent.agent.name}' answered the user question.
 
-        
+        You also have a tool:
+        - '': 
+
+        For anything else, respond appropriately or state you cannot handle it.
     """,
     sub_agents = [
         agent,
@@ -34,4 +39,4 @@ supervisor = Agent(
 
 print(f"✅ Agent '{supervisor.name}' created using model '{supervisor.model}' with sub-agents: {[]}, and tools: {[]}.")
 
-root_agent = supervisor
+root_agent = supervisor # Export for ADK.
