@@ -1,4 +1,4 @@
-from google.adk.agents.llm_agent import Agent
+from google.adk.agents import Agent
 from google.genai import types
 
 print("✅ Libraries imported.")
@@ -30,6 +30,6 @@ administrator = Agent(
     ],
 )
 
-print(f"✅ Agent {supervisor.name} created using model {supervisor.model}.") # TODO: @fedtti
+print(f"✅ Agent {administrator.name} created using model {administrator.model}.") # TODO: @fedtti
 
 root_agent = administrator

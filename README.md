@@ -11,3 +11,10 @@
 cd customer_service/
 adk web
 ```
+
+or
+
+```bash
+cd customer_service/
+adk run
+```
