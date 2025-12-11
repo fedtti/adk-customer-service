@@ -3,6 +3,7 @@ from google.genai import types
 print("✅ Libraries imported.")
 
 from ...tools.audit import tool
+print("✅ Tools imported.")
 
 """ """
 try:
@@ -22,4 +23,4 @@ try:
     print(f"✅ Agent {auditor.name} created using model {auditor.model}.")
 except Exception as error:
     auditor = None
-    print(f"❌ Could not create or run the agent. Error: {error}.")
+    print(f"❌ Could not create the agent. Error: {error}.")
