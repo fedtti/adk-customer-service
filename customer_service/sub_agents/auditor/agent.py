@@ -2,6 +2,7 @@ from google.adk.agents import Agent, CallbackContext
 from google.genai import types
 print("✅ Libraries imported.")
 
+from ...tools.audit import tool
 
 """ """
 try:
@@ -12,10 +13,10 @@ try:
         instruction = f"""
             You are an expirienced customer service auditor.
             Your ONLY task is to audit agent’s answers to the user. Do nothing else.
-
-            Return a vote from 1 to 5 to the answer.
         """,
-        tools = [],
+        tools = [
+            tool.audit
+        ],
         output_key = "kpi",
     )
     print(f"✅ Agent {auditor.name} created using model {auditor.model}.")

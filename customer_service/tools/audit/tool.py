@@ -4,12 +4,16 @@ print("✅ Libraries imported.")
 
 
 """ """
-def encoder() -> dict:
+def encoder(context: ToolContext) -> dict:
     
     return
 
 
 """ """
-def decoder() -> dict:
+def decoder(context: ToolContext) -> dict:
     
+    return
+
+def audit():
+
     return
