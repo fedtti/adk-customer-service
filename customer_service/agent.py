@@ -8,6 +8,9 @@ from .sub_agents.auditor import auditor
 from .sub_agents.supervisor import supervisor
 print("✅ Agents imported.")
 
+from .prompt import INSTRUCTION
+print("✅ Instructions imported.")
+
 
 """ """
 try:
@@ -15,15 +18,7 @@ try:
         name = "administrator",
         model = "gemini-2.5-flash",
         description = "Administrate agents’ operations",
-        instruction = f"""
-            You are an experienced customer service administrator.
-            Your role is to administrate agents’ operations. You DO NOT respond to the user queries directly.
-
-            You have three specialized sub-agents:
-            1. '{agent.name}': Handles users’ queries. Delegate to it for EACH query sent by the user, UNLESS it got negative feedbacks.
-            2. '{auditor.name}': Audits agent’s answers. Delegate to it EVERY time '{agent.name}' responds to the user for auditing.
-            3. '{supervisor.name}': Supervises agents’ operations. Delegate to it ONLY if agent’s responses got negative feedbacks.
-        """,
+        instruction = INSTRUCTION,
         sub_agents = [
             agent,
             auditor,
@@ -36,4 +31,4 @@ except Exception as error:
     print(f"❌ Could not create or run the agent. Error: {error}.")
 
 
-root_agent = administrator # Export for Google Agent Development Kit (ADK).
+root_agent = administrator # Export for Agent Development Kit (ADK).
